@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'Jeju_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Lotte',
+        'NAME': 'Appbase',
         'USER': 'rha6780',
         'PASSWORD': 'rha6780',
         'HOST': 'localhost',
