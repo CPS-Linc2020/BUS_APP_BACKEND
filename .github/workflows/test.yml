@@ -23,7 +23,3 @@ jobs:
           pip install --upgrade pip && pip install pipenv
           pipenv install --dev --ignore-pipfile
           pipenv --venv
-
-      - name: Test Run
-        run: |
-          pipenv run python3 Bus_backend/manage.py test
