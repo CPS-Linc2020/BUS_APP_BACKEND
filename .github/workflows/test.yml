@@ -26,4 +26,4 @@ jobs:
 
       - name: Test Run
         run: |
-          pipenv run python3 ./Bus_backend/manage.py test
+          pipenv run python3 Bus_backend/manage.py test
