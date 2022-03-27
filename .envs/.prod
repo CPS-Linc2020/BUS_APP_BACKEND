@@ -1,0 +1,7 @@
+SECRET_KEY = 'django-indecure-l%a)130pt)*_x*qqsvynprh0b0!ciybj1)$c^bqky^7s5ef^$w'
+
+POSTGRES_DB=
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_HOST=
+POSTGRES_PORT=
