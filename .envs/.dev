@@ -1,4 +1,4 @@
-SECRET_KEY = 'django-idddfef%a)6b0pt)*_x*qqsvynprh0b0!ciybj1)$c^bqky^7s5ef^$w'
+SECRET_KEY = ''
 
 POSTGRES_DB=busback
 POSTGRES_USER=postgres
