@@ -12,3 +12,11 @@ exclude = '''
   | Bus_backend
 )/
 '''
+
+[tool.isort]
+profile = "black"
+default_section = "THIRDPARTY"
+known_django = "django"
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "DJANGO", "FIRSTPARTY", "LOCALFOLDER"]
+skip_glob = "*/migrations/*"
+force_single_line = true
