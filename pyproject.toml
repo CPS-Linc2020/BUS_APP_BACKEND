@@ -18,5 +18,5 @@ profile = "black"
 default_section = "THIRDPARTY"
 known_django = "django"
 sections = ["FUTURE", "STDLIB", "THIRDPARTY", "DJANGO", "FIRSTPARTY", "LOCALFOLDER"]
-skip_glob = "*/migrations/*"
+skip_glob = ["*/migrations/*", "*/settings/*"]
 force_single_line = true
