@@ -9,5 +9,6 @@ exclude = '''
   | README.md
   | Pipfile
   | Pipfile.lock
+  | Bus_backend
 )/
 '''
