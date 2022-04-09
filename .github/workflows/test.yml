@@ -1,9 +1,19 @@
-name: test
+name: APITest
 
-on : push
+on: push
 
 jobs:
-  bulid:
+
+  linter:
+    name: linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: rickstaa/action-black@v1
+      - uses: isort/isort-action@master
+
+  test:
+
     runs-on: ubuntu-latest
 
     services:
@@ -14,18 +24,21 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         ports:
-          - 5432:5432
+          - 5432
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
     steps:
+      - name: Checkout branch
+        uses: actions/checkout@v2
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-            python-version: '3.10'
+          python-version: '3.10'
+        id: setup-python
 
       - name: Cache python packages
         uses: actions/cache@v2
@@ -36,5 +49,5 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip && pip install pipenv
-          pipenv install --deploy
+          pipenv install --dev --ignore-pipfile
           pipenv --venv
