@@ -1,16 +1,14 @@
-from email.policy import default
-
 from django.template import Engine
 import environ
 
 from .base import *
 
 env = environ.Env()
-environ.Env.read_env(BASE_DIR.parent / ".envs" / ".dev")
+environ.Env.read_env(BASE_DIR.parent/ ".envs" / ".dev")
 
 SECRET_KEY = env("SECRET_KEY")
 DATABASES = {
-    default : {
+    "default" : {
         "ENGINE" : "django.db.backends.postgresql",
         "NAME" : env("POSTGRES_DB"),
         "USER" : env("POSTGRES_USER"),
