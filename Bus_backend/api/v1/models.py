@@ -1,14 +1,12 @@
 from django.db import models
 
-# Create your models here.
-
 
 class BusStation(models):
     city_types = {
         1: "시내",
         2: "시외"
     }
-    station_name = models.TextField(max_length=300)
+station_name = models.TextField(max_length=300)
     bus_city_type = models.IntegerField(choices=city_types)
     longitude = models.FloatField(null=True)
     latitude = models.FloatField(null=True)
