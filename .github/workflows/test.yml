@@ -6,6 +6,21 @@ jobs:
   bulid:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:10.16
+        env:
+          POSTGRES_DB: github_actions
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -20,6 +35,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip && pip install pipenv
+          pip3 install --upgrade pip && pip install pipenv
           pipenv install --dev --ignore-pipfile
           pipenv --venv
