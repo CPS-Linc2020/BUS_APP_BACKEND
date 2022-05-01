@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class BusStation(models):
+class BusStation(models.Model):
     city_types = {
         1: "시내",
         2: "시외"
@@ -12,14 +12,14 @@ class BusStation(models):
     latitude = models.FloatField(null=True)
 
 
-class RoadNode(models):
+class RoadNode(models.Model):
     node_id = models.IntegerField()
     node_name = models.TextField(max_length=300)
     longitude = models.FloatField(null=True)
     latitude = models.FloatField(null=True)
 
 
-class BusRoute(models):
+class BusRoute(models.Model):
     route_id = models.IntegerField()
     route_number = models.TextField(max_length=300)
     route_name = models.TextField(max_length=300)
@@ -28,7 +28,7 @@ class BusRoute(models):
     transferability = models.BooleanField(default=True)
 
 
-class NodeLink(models):
+class NodeLink(models.Model):
     link_id = models.IntegerField()
     start_node_id = models.IntegerField()
     end_node_id = models.IntegerField()
